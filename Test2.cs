@@ -6,6 +6,6 @@ public class Test : Plugin
 {
     public override void Initialize()
     {
-        Console.WriteLine("Лол а как я тут оказался");
+        Console.WriteLine("Привет YouGame");
     }
 }
