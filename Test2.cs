@@ -4,8 +4,8 @@ MCC.LoadPlugin(new Test());
  
 public class Test : Plugin
 {
-    public override void Initialize()
-    {
-        Console.WriteLine("Привет " + Environment.UserName + " и YouGame.biz");
-    }
+	public override void Initialize()
+	{
+		Console.WriteLine("Кек");
+	}
 }
