@@ -8,11 +8,6 @@ public class Test : Macros
   {
     if (key == Key.R)
     {
-      KeyDown(Key.G, Key.B, Key.L, Key.J, Key.H);
-      KeyUp(Key.G, Key.B, Key.L, Key.J, Key.H);
-                    
-      KeyDown(Key.Enter);
-      KeyUp(Key.Enter);
       return true;
     }
     return false;
