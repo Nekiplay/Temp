@@ -4,12 +4,8 @@ MCC.LoadMacros(new Test());
  
 public class Test : Macros
 {
-  public override bool OnKeyDown(Key key, bool repeat)
+  public override void Initialize()
   {
-    if (key == Key.R)
-    {
-      return true;
-    }
-    return false;
+    Console.WriteLine("Кек");
   }
 }
