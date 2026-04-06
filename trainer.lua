@@ -707,9 +707,14 @@ local train_config = {
 }
 
 -- Функция обратного вызова для отслеживания прогресса
+local last_time = os.clock()
 local function onEpoch(epoch)
+    local current_time = os.clock()
+    local duration = current_time - last_time
+    last_time = current_time
+    
     if epoch % 100 == 0 then
-        print("Epoch: " .. epoch)
+        print(string.format("Epoch: %d | Time: %.3f sec", epoch, duration))
     end
 end
 
