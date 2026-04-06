@@ -1,7 +1,7 @@
 local djl = require("djl")
 local TextAI = require("text_ml")
 local threads = require("threads")
-
+djl.set_device("gpu", 0)
 -- 1. Конфигурация модели
 -- Мы будем использовать 3 слова на вход и 3 слова на выход
 local IN_LEN = 12
@@ -718,38 +718,36 @@ local function onEpoch(epoch)
     end
 end
 
-threads.startThread(function()
-	local success = djl.train(model_id, train_config, train_data, nil, onEpoch)
+local success = djl.train(model_id, train_config, train_data, nil, onEpoch)
 
-	if success then
-		print("Training completed successfully!")
+if success then
+	print("Training completed successfully!")
 
-		-- 6. Проверка работы перед сохранением
-		local test_q = "What are you doing, how are you doing?"
-		local encoded_q = ai:encode(test_q, IN_LEN)
-		local prediction = djl.predict(model_id, encoded_q)
-		
-		print("---------------------------------")
-		print("Test after training:")
-		print("Question: " .. test_q)
-		print("AI response: " .. ai:decode(prediction))
-		print("---------------------------------")
+	-- 6. Проверка работы перед сохранением
+	local test_q = "What are you doing, how are you doing?"
+	local encoded_q = ai:encode(test_q, IN_LEN)
+	local prediction = djl.predict(model_id, encoded_q)
+	
+	print("---------------------------------")
+	print("Test after training:")
+	print("Question: " .. test_q)
+	print("AI response: " .. ai:decode(prediction))
+	print("---------------------------------")
 
-		-- 7. СОХРАНЕНИЕ МОДЕЛИ И КОНФИГА
-		-- Создаем папку 'models', если её нет (зависит от ОС)
-		-- os.execute("mkdir models") 
-		
-		local save_path = "models/my_bot"
-		if ai:save(save_path) then
-			print("All model files are saved to the path: " .. save_path)
-		else
-			print("Error saving files!")
-		end
-
+	-- 7. СОХРАНЕНИЕ МОДЕЛИ И КОНФИГА
+	-- Создаем папку 'models', если её нет (зависит от ОС)
+	-- os.execute("mkdir models") 
+	
+	local save_path = "models/my_bot"
+	if ai:save(save_path) then
+		print("All model files are saved to the path: " .. save_path)
 	else
-		print("Error during training.")
+		print("Error saving files!")
 	end
 
-	-- 8. Закрываем модель
-	djl.close(model_id)
-end)
+else
+	print("Error during training.")
+end
+
+-- 8. Закрываем модель
+djl.close(model_id)
