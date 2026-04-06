@@ -62,11 +62,11 @@ local raw_data = {
     {q = "Have a nice", a = "Хорошего тебе дня"},
     
     -- Кто я и кто ты
-    {q = "My name is", a = "Мое имя есть"},
-    {q = "I am a", a = "Я есть этот"},
-    {q = "Who are you", a = "Кто есть ты"},
-    {q = "You are hero", a = "Ты есть герой"},
-    {q = "He is Lua", a = "Он есть Луа"},
+    {q = "My name is", a = "Меня зовут"},
+    {q = "I am a", a = "Я —"},
+    {q = "Who are you", a = "Кто ты?"},
+    {q = "You are hero", a = "Ты герой"},
+    {q = "He is Lua", a = "Он — Луа"},
     
     -- Геймерские команды (с большой буквы)
     {q = "Kill the Boss", a = "Убей этого Босса"},
@@ -83,11 +83,6 @@ local raw_data = {
     {q = "Open the door", a = "Открой эту дверь"},
     {q = "Close the window", a = "Закрой это окно"},
     
-    -- Описание мира
-    {q = "Earth is round", a = "Земля есть круглая"},
-    {q = "Sky is blue", a = "Небо есть синее"},
-    {q = "Fire is hot", a = "Огонь есть горячий"},
-    {q = "Ice is cold", a = "Лед есть холодный"},
     {q = "Sun shines bright", a = "Солнце светит ярко"},
     
     -- Вопросы
@@ -98,11 +93,11 @@ local raw_data = {
     {q = "How to craft", a = "Как это крафтить"},
     
     -- Работа и Техника
-    {q = "Laptop is new", a = "Ноутбук есть новый"},
-    {q = "Phone is broken", a = "Телефон есть сломан"},
-    {q = "Code is working", a = "Код есть работает"},
-    {q = "Internet is fast", a = "Интернет есть быстрый"},
-    {q = "Battery is low", a = "Батарея есть низкая"},
+    {q = "Laptop is new", a = "Ноутбук новый"},
+    {q = "Phone is broken", a = "Телефон сломан"},
+    {q = "Code is working", a = "Код работает"},
+    {q = "Internet is fast", a = "Интернет быстрый"},
+    {q = "Battery is low", a = "Батарея разряжена"},
     
     -- Разное
     {q = "I have dream", a = "Я имею мечту"},
