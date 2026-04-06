@@ -738,7 +738,7 @@ if success then
 	-- Создаем папку 'models', если её нет (зависит от ОС)
 	-- os.execute("mkdir models") 
 	
-	local save_path = "models/my_bot"
+	local save_path = "my_bot"
 	if ai:save(save_path) then
 		print("All model files are saved to the path: " .. save_path)
 	else
