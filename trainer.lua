@@ -12,7 +12,6 @@ local config = {
     input_size = IN_LEN,
     output_size = OUT_LEN,
     layers =  {1024, 1024, 512, 512}, -- Два скрытых слоя
-	batch_size = 512,
     mode = "regression"
 }
 
