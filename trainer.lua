@@ -1,7 +1,7 @@
 local djl = require("djl")
 local TextAI = require("text_ml")
 local threads = require("threads")
-djl.set_device("gpu", 0)
+djl.set_device("gpu", {0, 1})
 -- 1. Конфигурация модели
 -- Мы будем использовать 3 слова на вход и 3 слова на выход
 local IN_LEN = 12
